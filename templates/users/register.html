@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<title>Imagenta - Inicio de sesión</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/registrar2.css' %}">
+<head>
+    <link rel="shortcut icon" href="{% static 'img/icon.png' %}">
+
+</head>
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> CREAR CUENTA </h2>
+<!-- Icon -->
+    <div class="fadeIn first">
+      <img src="{% static 'img/logo2.png' %}" />
+    </div>
+
+
+  <!-- Formulario -->
+  <form method="post">
+    {% csrf_token %}
+    <br>
+    {% for field in form %}
+      <div class="form-group" style="color: white;">
+        
+        
+        {{ field }}
+
+        {% if field.errors %}
+          {{ field.errors }}
+        
+        {% endif %}
+
+      </div>
+    {% endfor %}
+
+    <input type="submit" id="btninicio"  class="btn btn-success" value="Registrarse">
+  </form>
+
+</div>
+

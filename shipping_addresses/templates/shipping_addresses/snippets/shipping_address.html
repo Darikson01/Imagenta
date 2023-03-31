@@ -1,0 +1,28 @@
+<div class="card">
+  <h5 class="card-header"></h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ shipping_address.address }}</h5>
+    <div class="card-title">
+     <b >Direccion:</b> {{ shipping_address.line1 }}
+    </div>
+    <div class="card-title">
+     <b>Barrio:</b> {{ shipping_address.state }}
+    </div>
+    <div class="card-title">
+      <b>Numero de Telefono:</b> {{ shipping_address.line2 }}
+    </div>
+    
+
+    {% if edit %}
+      <div class="mt-2">
+        <a href="{% url 'shipping_addresses:update' shipping_address.pk %}" class="btn btn-info">Editar</a>
+        {% if shipping_address.default %}
+          {% else %}
+          <a href="{% url 'shipping_addresses:default' shipping_address.pk %}" class="btn btn-warning">Default</a>
+          <a href="{% url 'shipping_addresses:delete' shipping_address.pk %}" class="btn btn-danger">Eliminar</a>
+        {% endif %}
+      {% endif %}
+
+    </div>
+  </div>
+</div>

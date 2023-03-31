@@ -1,0 +1,1 @@
+web: gunicorn facilito_store.wsgi --log-file -

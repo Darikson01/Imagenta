@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% block js%}
+ <script>
+    function deleteCompra(id){
+        Swal.fire({
+                title: '¿Estás seguro?',
+                text: 'Esta opcion no se puede deshacer',
+                icon: 'question',
+                showCancelButton: true,
+                cancelButtonText: 'No,Cancelar',
+                confirmButtonText: 'Si,Eliminar',
+                confirmButtonColor: '#007bff',
+                cancelButtonColor: '#dc3545',
+            })
+            .then(function (result) {
+                    if (result.isConfirmed) {
+                        window.location.href = "/deleteCompra/"+id+"/"
+                    }
+                })
+        }
+
+ </script>   
+
+{% endblock %}
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-9 col-sm-4 animate__animated animate__backInRight animate__delay-0.4s">
+                <div class="card">
+                    <div class="card-header text-center font-weight-bold">
+                        {{ title }}
+                    </div>
+                    <div class="card-body table-responsive align-items-center">
+                        <!-- inline-block justify-content-end mb-2 mx-2 -->
+                        <div class="d-flex mb-2">
+                            <a href="{% url 'addcompra' %}" class="d-flex inline-block mx-auto btn btn-danger btn-sm" type="submit">
+                                Nueva Compra
+                            </a>
+
+                            <form class="d-flex mx-auto d-sm-inlne-block form-inline" method="POST" action="">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-4 small text-center" name="buscador" placeholder="buscar..." value="{{ request.POST.buscador }}">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit"> 
+                                                <i class="fa fa-search bi-sm"></i>
+                                            </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <table class="table table-condensed">
+                            <thead class="thead-dark text-center ">
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Proveedor</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Fecha de Compra</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% load bootstrap_icons %} {% if entity %} {% for Compras in entity %}
+                                <tr>
+                                    <td>{{ Compras.id }}</td>
+                                    <td>{{ Compras.producto }}</td>
+                                    <td>{{ Compras.proveedor}}</td>
+                                    <td>{{ Compras.cantidad}}</td>
+                                    <td>{{ Compras.total }}</td>
+                                    <td>{{ Compras.fecha}}</td>
+                                    <td colspan="4">
+                                        <a class="btn btn-secondary btn-sm" href="{% url 'editCompra' Compras.id %}" type="button"><i class="fa fa-pen"></i></a><hr>
+                                        <a class="btn btn-danger btn-sm" onclick="deleteCompra({{ Compras.id}})" href="#"  type="button"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                {% endfor %} {% else %}
+                                <div class="text-center text-warning">
+                                    <h3> No se encontraron Compras!!</h3>
+                                </div>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                        <div>
+                            {% include 'paginator.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

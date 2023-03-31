@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  {% include 'orders/snippets/breadcrumb.html' %}
+{% endblock %}
+
+{% block content %}
+  <div class="col">
+    <div class="h3">
+      Método de pago
+    </div>
+    <div class="">
+      {% include 'billing_profiles/snippets/billing_profile.html' %}
+    </div>
+    <div class="mt-2">
+      <a href="{% url 'billing_profiles:create' %}" class="btn btn-primary">Agregar método de pago</a>
+    </div>
+    <div class="mt-2">
+      <a href="{% url 'orders:confirm' %}" class="btn btn-danger">Confirmar</a>
+    </div>
+  </div>
+{% endblock %}

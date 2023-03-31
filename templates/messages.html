@@ -1,0 +1,23 @@
+{% if messages %}
+  {% for message in messages %}
+    {% if message.tags == 'success' %}
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script>
+        Swal.fire({
+            "title": "Felicitaciones!!",
+            "text": "{{ message }}",
+            "icon": "success"
+        })
+      </script>
+    {% elif message.tags == 'error' %}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      Swal.fire({
+          "title": "Fallido!!",
+          "text": "{{ message }}",
+          "icon": "error"
+      })
+    </script>
+    {% endif %}
+  {% endfor %}
+{% endif %}

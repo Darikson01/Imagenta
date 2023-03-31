@@ -1,0 +1,344 @@
+{% load static %} {% url 'carts:cart' as cart %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+	<style type="text/css">
+		img{
+			margin-left: -50px;
+		}
+	</style>
+
+	<!-- title -->
+	<title>Inicio</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="{% static 'images/icon.png' %}">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+	<!-- main style -->
+	<link rel="stylesheet" href="{% static 'css/main3.css' %}">
+	<!-- responsive -->
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+</head>
+<body>
+	<div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+
+	
+    <!--PreLoader Ends-->
+	
+	<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="{% url 'index' %}">
+								<img src="{% static 'images/logo2.png' %}" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								
+								</li>
+								<li><a href="{% url 'about' %}">Nosotros</a></li>
+								
+								<li><a href="{% url 'producto' %}">Productos</a></li>							
+								<li>
+								    <div class="social-icons">
+						                <ul>
+											
+											<li><a class="shopping-cart" href="{% url 'login' %}"><i class="fas fa-user"></i></i> <br>Iniciar Sesion</br></a></li>
+											<li><a class="shopping-cart" href="{% url 'producto' %}"><i class="fas fa-shopping-cart"></i> <br>Carrito</br></a></li>
+										</ul>
+												
+									</div>
+								</li>
+							</ul>
+						</nav>
+						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Hacemos tu publicidad</p>
+						<h1>Imagenta</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- featured section -->
+	<div class="feature-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7">
+					<div class="featured-text">
+						<h2 class="pb-3">¿Por qué <span class="orange-text">Imagenta?</span></h2>
+						<div class="row">
+							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-shipping-fast"></i>
+									</div>
+									<div class="content">
+										<h3>Entrega domicilio</h3>
+										<p>Realizamos entregas a nivel nacional</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-money-bill-alt"></i>
+									</div>
+									<div class="content">
+										<h3>Precio</h3>
+										<p>Manejamos los mejores precios y la mejores calidad del mercado.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-briefcase"></i>
+									</div>
+									<div class="content">
+										<h3>Personalización</h3>
+										<p>Nos caracterizamos por tener las mejores personalizados del mercado. El cliente lo pide y nosotros te lo damos.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-sync-alt"></i>
+									</div>
+									<div class="content">
+										<h3>Reembolso</h3>
+										<p>Nos caracterizamos por dar una garantía por el producto. Si el cliente no esta satifecho se le realiza reembolso con su factura.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- end team section -->
+
+	<!-- testimonail-section -->
+	<div class="testimonail-section mt-80 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1 text-center">
+					<div class="testimonial-sliders">
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="{% static 'images/admin.jpg' %}" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>Andrea Hoyos </h3>
+								<p class="testimonial-body">
+									Administradora y diseñadora gráfica
+								</p>				
+							</div>
+						</div>
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="{% static 'images/maquinista.jpg' %}" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>Edgar Salamanca </h3>
+								<p class="testimonial-body">
+									Maquinista de la empresa
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end testimonail-section -->
+
+
+	<!-- logo carousel -->
+	<div class="logo-carousel-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="logo-carousel-inner">
+						<div class="single-logo-item">
+							<img src="{% static 'images/impresion1.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/fotocopia.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/escaner.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/caja luz.png' %}">
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/placas.png' %}">
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/tarjetas.png' %}">
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/volantes.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/factura.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/bastidores.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/adhesivos.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/boletas.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/canerts.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/menus.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/rompetraficos.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/etiquetas.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/imanadas.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/sellos.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/ploter de corte.png' %}" >
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/mugs.png' %}" >
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end logo carousel -->
+
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">Imagenta</h2>
+						<p>Imagenta es una empresa que se dedica a  crear en lo que se trata de publicidad en general.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Contacto</h2>
+						<ul>
+							<li>Calle 26 Sur # 73 - 36 Bogotá, Colombia.</li>
+							<li>imagentacreativa@gmail.com</li>
+							<li>+57 315 5278012</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Nosotros</h2>
+						<ul>
+							<li><a href="{% url 'about' %}">Inicio</a></li>
+							<li><a href="{% url 'about' %}">Servicios</a></li>
+							<li><a href="{% url 'contacto' %}">Contacto</a></li>
+							<li><a href="{% url 'producto' %}">Productos</a></li>	
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box subscribe">
+						<div class="footer-box subscribe">
+						<a href="{% url 'index' %}">
+						<img src="{% static 'images/logo6.png' %}" style="width:600px; height:100px" >
+						</a>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+	
+	
+	<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- count down -->
+	<script src="{% static 'js/jquery.countdown.js' %}"></script>
+	<!-- isotope -->
+	<script src="{% static 'js/jquery.isotope-3.0.6.min.js' %}"></script>
+	<!-- waypoints -->
+	<script src="{% static 'js/waypoints.js' %}"></script>
+	<!-- owl carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- magnific popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- mean menu -->
+	<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+	<!-- sticker js -->
+	<script src="{% static 'js/sticker.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'js/main1.js' %}"></script>
+
+
+	
+	
+	
+	
+</body>
+</html>

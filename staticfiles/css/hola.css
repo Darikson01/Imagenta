@@ -1,0 +1,19 @@
+body{
+    position: relative;
+    padding-bottom: 8em;
+    min-height: 100vh;
+}
+
+footer{
+    padding-bottom: 1em 0;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+nav{
+    background-color: black;
+    
+}
+

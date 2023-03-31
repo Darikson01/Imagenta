@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <link rel="shortcut icon" href="{% static 'images/Icon.png' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/hola.css' %}">
+    {% if stripe_public_key %}
+      <meta name="stripe_public_key" content="{{ stripe_public_key }}">
+    {% endif %}
+
+    {% block css %}
+    {% endblock %}
+  </head>
+  <body>
+
+    {% include 'navbar.html' %}
+
+    <div class="container">
+
+      {% include 'messages.html' %}
+
+      {% block breadcrumb %}
+      {% endblock %}
+
+      <div class="row mt-3">
+
+        {% block content %}
+        {% endblock %}
+
+      </div>
+    </div>
+    <br>
+    
+    <footer class="container-fluid my-0 pt-3 pb-1 ">
+      <!-- <footer class="navbar fixed-bottom navbar-light bg-dark">-->
+      <div class="row">
+          <ul class="col-4 list-unstyled text-center mx-auto my-auto">
+              <h6 class="text-white">Enlaces rápidos</h6>
+              <li class="list-unstyled text-white">
+                  <a href="" class="stretched-link text-white">Garantía</a></li>
+              <li>
+                  <a href="" class="stretched-link text-white">Devoluciones</a></li>
+
+          </ul>
+          <ul class="col-4 list-unstyled text-center mx-auto my-auto">
+              <img class="img-fluid pb-1 " src="{% static 'images/xd.png' %}" alt="logo">
+              <p class="font-weight-bold text-white text-center mb-1"></p>
+              <!-- <p class="text-white text-center pb-0 mb-0">Avda. Aviadores del Chaco 369 </p>
+              <p class="text-white text-center mb-0">Asunción - Paraguay </p> -->
+          </ul>
+          <ul class="col-4 list-unstyled my-auto mx-auto text-center">
+              {% load bootstrap_icons %}
+              <li>
+                  <a href="https://www.facebook.com/imagentacreativa/"> <i class="fab fa-facebook-f text-white mr-2"></i><span class="badge badge-dark">Facebook</span> </a>
+              </li>
+              <li>
+                  <a href="https://www.instagram.com/imagentacreativa/"> <i class="fab fa-instagram text-white mr-2"></i><span class="badge badge-dark">Instagram</span> </a>
+              </li>
+              
+          </ul>
+      </div>
+      <div class="text-center">
+          <p class="pt-2 text-white">Copyright &copy; 2023 | All rights Reserved</p>
+      </div>
+  </footer>
+    
+
+
+  </body>
+  
+  
+  <script src="https://kit.fontawesome.com/7efd9e34c5.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  {% block javascript %}
+  {% endblock %}
+
+</html>

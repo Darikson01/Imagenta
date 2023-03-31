@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="min-vh-100 d-flex flex-colum py-4"></div>
+    <div class="container">
+        <h3 class="animate__animated animate__bounceInDown animate__delay-0.2s text-center">CONTACTO</h3>
+        <div class="row">
+            <div class="col-lg-6 col-sm-04 mx-auto animate__animated animate__bounceInUp animate__delay-0.3s">
+                
+                <form method="post">
+                    {% csrf_token %} <p>
+                        <input type="text" class="form-control" placeholder="Nombre" name="name" >
+                        </p>
+                        <p>
+                        <input type="email" class="form-control" placeholder="Email" name="email" >
+                    </p>
+                    <p>
+                        <input type="text" class="form-control" placeholder="Celular" name="phone" >
+                    </p>
+                    <p>    
+                        <input type="text" class="form-control" placeholder="Empresa" name="subject" >
+                    </p>
+                    <p><textarea name="message" class="form-control" cols="30" rows="10" placeholder="Mensaje"></textarea></p>
+                    <input type="hidden" class="form-control" name="token" value="imagentacreativa@gmail.com" />
+                   
+                    <div class="justify-content-center">
+                        <button type="reset" class="btn btn-secondary mt-1 mx-2" button ">Cancelar</button>
+                        <button type="submit " class="btn btn-danger mt-1 " value="Enviar" button ">Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-sm-04 mt-4 rounded animate__animated animate__backInRight animate__delay-0.4s embed-responsive embed-responsive-4by3">
+                <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8464155757893!2d-74.14550178523794!3d4.621475796642748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ea3a331f005%3A0xccef966e46628a6d!2sCl.%2026%20Sur%20%2373-36%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1647633269873!5m2!1ses!2sco"
+                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
